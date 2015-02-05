@@ -8,7 +8,7 @@
  #
  # Main module of the application.
 ###
-angular
+@app = angular
   .module('learnEnglishFrontApp', [
     'ngAnimate',
     'ngCookies',
@@ -19,12 +19,12 @@ angular
   ])
   .config ($routeProvider) ->
     $routeProvider
+      .when '/login',
+        templateUrl: 'views/login.html'
+        controller: 'LoginCtrl'
       .when '/',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
-      .when '/about',
-        templateUrl: 'views/about.html'
-        controller: 'AboutCtrl'
+        templateUrl: 'views/home.html'
+        controller: 'HomeCtrl'
       .otherwise
         redirectTo: '/'
 
