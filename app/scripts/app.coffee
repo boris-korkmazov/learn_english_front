@@ -28,3 +28,6 @@
       .otherwise
         redirectTo: '/'
 
+  .constant 'endPoint', '/data'
+
+
