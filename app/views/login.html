@@ -1,7 +1,12 @@
 <div class="list-group">
-  <a class="list-group-item" ng-click="setUser({id: user.id, name: user.name})" ng-class="{active: user.id === current_user.id}"  ng-repeat="user in users">
-    <h4 class="list-group-item-heading">{{user.name}}</h4>
-    <p class="list-group-item-text"><strong>Создан</strong> {{user.created_at}}</p>
-    <p class="list-group-item-text"><strong>Добавленных слов</strong> 1000</p>
+  <h1 ng-show="usersEmpty()">Пока нет пользователей</h1>
+  <a class="list-group-item user-item"  ng-class="{active: user.id === current_user.id}"  ng-repeat="user in users">
+    <span ng-click="deleteUser(user.id)" class="close glyphicon glyphicon-remove"></span>
+    <div ng-click="setUser({id: user.id, name: user.name})">
+      <h4 class="list-group-item-heading">{{user.name}}</h4>
+      <p class="list-group-item-text"><strong>Создан</strong> {{user.created_at}}</p>
+      <p class="list-group-item-text"><strong>Добавленных слов</strong> 1000</p>
+    </div>
   </a>
 </div>
+<user-create></user-create>

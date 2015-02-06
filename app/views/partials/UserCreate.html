@@ -1,0 +1,8 @@
+<form class="form-inline closeable" ng-hide="hiddenForm">
+  <span class="close glyphicon glyphicon-remove" ng-click="toggleForm()"></span>
+  <div class="form-group">
+    <input type="text" class="form-control" id="name" placeholder="Your name" ng-model="userName">
+  </div>
+  <button class="btn btn-default" ng-click="createUser()">Создать</button>
+</form>
+<button class="btn btn-primary" ng-show="hiddenForm" ng-click=" toggleForm()">Создать нового пользователя</button>

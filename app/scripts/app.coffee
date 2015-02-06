@@ -15,7 +15,8 @@
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'underscore'
   ])
   .config ($routeProvider) ->
     $routeProvider
@@ -28,6 +29,6 @@
       .otherwise
         redirectTo: '/'
 
-  .constant 'endPoint', '/data'
+  .constant 'endPoint', 'http://localhost:1234/'
 
 
