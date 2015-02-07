@@ -5,13 +5,7 @@
   return {
     restrict: 'E'
 
-    scope:
-
-      userName: '@'
-
-      importWords: '='
-
-      hiddenForm: '@'
+    scope: true
 
     templateUrl: 'views/partials/UserCreate.html'
 
@@ -34,11 +28,11 @@
         UserService.create({name: scope.userName}).then (data) ->
           scope.toggleForm()
 
-          scope.userName = ''
-
           scope.$parent.users.push data
 
           scope.$parent.sendMessage {text: "Пользователь \'#{scope.userName}\' успешно создан", class: 'success'}
+
+          scope.userName = ''
 
         , (reason)->
 

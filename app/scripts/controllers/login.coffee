@@ -13,7 +13,7 @@
     $scope.$parent.current_user = user
 
   $scope.deleteUser = (userId)->
-    if confirm "Вы уверены, что хотите удалть пользователя?"
+    if confirm "Вы уверены, что хотите удалить пользователя?"
       if $scope.current_user and $scope.current_user.id is userId
         $scope.$parent.current_user = null
         AuthService.logout()
